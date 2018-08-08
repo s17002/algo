@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 class Main {
@@ -41,5 +42,3 @@ class Main {
          System.out.println("x[" + i + "]＝" + x[i]);
    }
 }
-
-
