@@ -158,14 +158,27 @@ public class BinTree<K,V> {
 	//--- nodeを根とする部分木のノードをキー値の昇順に表示 ---//
 	private void printSubTree(Node node) {
 		if (node != null) {
-			printSubTree(node.right);				// 左部分木をキー値の昇順に表示
-			System.out.println(node.key.toString() + " " + node.data.toString());			// nodeを表示
-			printSubTree(node.left);
+			printSubTree(node.left);				// 左部分木をキー値の昇順に表示
+			System.out.println(node.key + " " + node.data);			// nodeを表示
+			printSubTree(node.right);				// 右部分木をキー値の昇順に表示
 		}
 	}
 
 	//--- 全ノードをキー値の昇順に表示 ---//
-	public void printRerverse() {
+	public void print() {
 		printSubTree(root);
+	}
+
+	//--- 課題部分 ---//
+	private void printReverseSubTree(Node node) {
+	  if (node != null) {
+	    printReverseSubTree(node.right);
+	    System.out.println(node.key.toString() + " " + node.data.toString());
+	    printReverseSubTree(node.left);
+	  }
+	}
+	//--- 全ノードをキー値の降順に表示 ---//
+	public void printReverse() {
+	  printReverseSubTree(root);
 	}
 }

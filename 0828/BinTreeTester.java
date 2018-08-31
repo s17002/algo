@@ -44,6 +44,7 @@ class BinTreeTester {
 		REMOVE(   "削除"),
 		SEARCH(   "探索"),
 		PRINT(    "表示"),
+		R_PRINT(  "降順表示"),
 		TERMINATE("終了");
 
 		private final String message;			// 表示用文字列
@@ -108,6 +109,9 @@ class BinTreeTester {
 
 			 case PRINT :			// 全ノードをキー値の昇順に表示
 					tree.print();
+					break;
+			 case R_PRINT :
+					tree.printReverse();
 					break;
 			}
 		} while (menu != Menu.TERMINATE);
